@@ -401,6 +401,237 @@ html {
     }
 }
 
+/* About Section Styles */
+.about-content p {
+    line-height: 1.8;
+    color: #495057;
+}
+
+.highlight-box {
+    border-left: 4px solid var(--primary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.highlight-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0, 123, 255, 0.05), rgba(40, 167, 69, 0.05));
+    z-index: -1;
+}
+
+.feature-card {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), #28a745);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: left;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.feature-card:hover::before {
+    transform: scaleX(1);
+}
+
+.feature-card .feature-icon {
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1);
+}
+
+.feature-card h5 {
+    color: #343a40;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.feature-card .text-muted {
+    color: #6c757d !important;
+}
+
+/* About section responsive */
+@media (max-width: 768px) {
+    .about-content p {
+        font-size: 1rem;
+    }
+    
+    .highlight-box {
+        margin: 2rem 0;
+    }
+    
+    .feature-card {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Services Section Styles */
+.services-header {
+    position: relative;
+}
+
+.services-emoji {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.service-card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), #28a745);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: left;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary-color);
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
+}
+
+.service-card-wide {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.service-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.service-icon-emoji {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.service-header h3 {
+    color: #343a40;
+    font-weight: 600;
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.service-content p {
+    color: #495057;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-features li {
+    padding: 8px 0;
+    font-size: 0.95rem;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+}
+
+.service-features .fas {
+    flex-shrink: 0;
+}
+
+.region-badge {
+    background: rgba(0, 123, 255, 0.1);
+    padding: 10px 15px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 123, 255, 0.2);
+}
+
+.region-badge:hover {
+    background: rgba(0, 123, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.region-badge span {
+    font-weight: 500;
+    color: #495057;
+    font-size: 0.9rem;
+}
+
+/* Services responsive */
+@media (max-width: 768px) {
+    .service-card {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .service-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .service-header h3 {
+        font-size: 1.2rem;
+    }
+    
+    .service-icon-emoji {
+        font-size: 2rem;
+    }
+    
+    .services-emoji {
+        font-size: 2rem;
+    }
+    
+    .region-badge {
+        margin-bottom: 15px;
+    }
+}
+
 .hero-section::before {
     content: '';
     position: absolute;
