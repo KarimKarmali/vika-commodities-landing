@@ -1,7 +1,171 @@
 // Custom JavaScript for VIKA Commodities Landing Page
 
+// Language translations
+const translations = {
+    en: {
+        nav_home: 'Home',
+        nav_services: 'Services',
+        nav_about: 'About',
+        nav_contact: 'Contact',
+        nav_system: 'Odoo System',
+        hero_title: 'Sustainable Solutions in ',
+        hero_biofuels: 'Biofuels',
+        hero_description: 'VIKA Commodities specializes in sustainable commodities for biofuels, with <strong>REDcert</strong> certification and expertise in circular raw materials.',
+        hero_products: 'Our Products',
+        hero_certification: 'REDcert Certification',
+        services_title: 'Our Sustainable Products',
+        services_subtitle: '<strong>REDcert</strong> certified raw materials for advanced biofuels',
+        product_uco_title: 'Used Cooking Oils (UCO)',
+        product_uco_desc: 'REDcert certified used cooking oils for advanced biodiesel production and sustainable aviation fuel.',
+        product_oleins_title: 'Acid Oleins',
+        product_oleins_desc: 'High-quality acid oleins from vegetable oil refining, ideal for sustainable biofuels.',
+        product_pome_title: 'POME & Residues',
+        product_pome_desc: 'Palm Oil Mill Effluent, food waste and other certified waste & residues for circular economy.',
+        about_title: 'Pioneers in Sustainability',
+        about_description: 'VIKA Commodities specializes in sustainable raw materials for biofuels, promoting circular economy and transport decarbonization.',
+        about_cert: 'REDcert Europe Certification',
+        about_circular: 'Circular Economy',
+        about_netzero: 'Net Zero Commitment',
+        about_supply: 'Global Supply Chain',
+        about_access: 'Access System',
+        contact_title: 'Contact Us',
+        contact_email: 'Email',
+        contact_phone: 'Phone',
+        contact_location: 'Location',
+        contact_cta: 'Ready to revolutionize your commodities business?',
+        contact_start: 'Get Started',
+        footer_copyright: '© 2024 VIKA Commodities. All rights reserved.',
+        footer_system: 'Odoo System'
+    },
+    pt: {
+        nav_home: 'Início',
+        nav_services: 'Serviços',
+        nav_about: 'Sobre',
+        nav_contact: 'Contacto',
+        nav_system: 'Sistema Odoo',
+        hero_title: 'Soluções Sustentáveis em ',
+        hero_biofuels: 'Biocombustíveis',
+        hero_description: 'A VIKA Commodities é especialista em commodities sustentáveis para biocombustíveis, com certificação <strong>REDcert</strong> e expertise em matérias-primas circulares.',
+        hero_products: 'Nossos Produtos',
+        hero_certification: 'Certificação REDcert',
+        services_title: 'Nossos Produtos Sustentáveis',
+        services_subtitle: 'Matérias-primas certificadas <strong>REDcert</strong> para biocombustíveis avançados',
+        product_uco_title: 'Óleos Alimentares Usados (UCO)',
+        product_uco_desc: 'Óleos alimentares usados certificados REDcert para produção de biodiesel avançado e combustível de aviação sustentável.',
+        product_oleins_title: 'Oleínas Ácidas',
+        product_oleins_desc: 'Oleínas ácidas de alta qualidade provenientes do refino de óleos vegetais, ideais para biocombustíveis sustentáveis.',
+        product_pome_title: 'POME & Resíduos',
+        product_pome_desc: 'Palm Oil Mill Effluent, resíduos alimentares e outros waste & residues certificados para economia circular.',
+        about_title: 'Pioneiros em Sustentabilidade',
+        about_description: 'A VIKA Commodities é especialista em matérias-primas sustentáveis para biocombustíveis, promovendo a economia circular e a descarbonização do transporte.',
+        about_cert: 'Certificação REDcert Europa',
+        about_circular: 'Economia Circular',
+        about_netzero: 'Compromisso Net Zero',
+        about_supply: 'Cadeia de Fornecimento Global',
+        about_access: 'Aceder ao Sistema',
+        contact_title: 'Contacte-nos',
+        contact_email: 'Email',
+        contact_phone: 'Telefone',
+        contact_location: 'Localização',
+        contact_cta: 'Pronto para revolucionar seus negócios em commodities?',
+        contact_start: 'Começar Agora',
+        footer_copyright: '© 2024 VIKA Commodities. Todos os direitos reservados.',
+        footer_system: 'Sistema Odoo'
+    },
+    es: {
+        nav_home: 'Inicio',
+        nav_services: 'Servicios',
+        nav_about: 'Acerca',
+        nav_contact: 'Contacto',
+        nav_system: 'Sistema Odoo',
+        hero_title: 'Soluciones Sostenibles en ',
+        hero_biofuels: 'Biocombustibles',
+        hero_description: 'VIKA Commodities se especializa en commodities sostenibles para biocombustibles, con certificación <strong>REDcert</strong> y experiencia en materias primas circulares.',
+        hero_products: 'Nuestros Productos',
+        hero_certification: 'Certificación REDcert',
+        services_title: 'Nuestros Productos Sostenibles',
+        services_subtitle: 'Materias primas certificadas <strong>REDcert</strong> para biocombustibles avanzados',
+        product_uco_title: 'Aceites de Cocina Usados (UCO)',
+        product_uco_desc: 'Aceites de cocina usados certificados REDcert para producción de biodiésel avanzado y combustible de aviación sostenible.',
+        product_oleins_title: 'Oleínas Ácidas',
+        product_oleins_desc: 'Oleínas ácidas de alta calidad del refinado de aceites vegetales, ideales para biocombustibles sostenibles.',
+        product_pome_title: 'POME & Residuos',
+        product_pome_desc: 'Palm Oil Mill Effluent, residuos alimentarios y otros waste & residues certificados para economía circular.',
+        about_title: 'Pioneros en Sostenibilidad',
+        about_description: 'VIKA Commodities se especializa en materias primas sostenibles para biocombustibles, promoviendo la economía circular y la descarbonización del transporte.',
+        about_cert: 'Certificación REDcert Europa',
+        about_circular: 'Economía Circular',
+        about_netzero: 'Compromiso Net Zero',
+        about_supply: 'Cadena de Suministro Global',
+        about_access: 'Acceder al Sistema',
+        contact_title: 'Contáctanos',
+        contact_email: 'Email',
+        contact_phone: 'Teléfono',
+        contact_location: 'Ubicación',
+        contact_cta: '¿Listo para revolucionar tu negocio de commodities?',
+        contact_start: 'Empezar Ahora',
+        footer_copyright: '© 2024 VIKA Commodities. Todos los derechos reservados.',
+        footer_system: 'Sistema Odoo'
+    }
+};
+
+// Language management
+let currentLanguage = localStorage.getItem('language') || 'en';
+
+// Function to change language (global scope)
+window.changeLanguage = function(lang) {
+    currentLanguage = lang;
+    localStorage.setItem('language', lang);
+    document.documentElement.lang = lang;
+    updatePageContent();
+    updateCurrentLanguageDisplay();
+};
+
+// Function to update page content based on current language
+function updatePageContent() {
+    const elements = document.querySelectorAll('[data-lang-key]');
+    elements.forEach(element => {
+        const key = element.getAttribute('data-lang-key');
+        if (translations[currentLanguage] && translations[currentLanguage][key]) {
+            element.innerHTML = translations[currentLanguage][key];
+        }
+    });
+    
+    // Update page title and meta description
+    const titleMap = {
+        en: 'VIKA Commodities - Sustainable Solutions',
+        pt: 'VIKA Commodities - Soluções Sustentáveis',
+        es: 'VIKA Commodities - Soluciones Sostenibles'
+    };
+    
+    const descriptionMap = {
+        en: 'VIKA Commodities - Leading sustainable commodities solutions for biofuels',
+        pt: 'VIKA Commodities - Líder em soluções comerciais para mercados de commodities',
+        es: 'VIKA Commodities - Líder en soluciones comerciales para mercados de commodities'
+    };
+    
+    document.title = titleMap[currentLanguage];
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+        metaDescription.content = descriptionMap[currentLanguage];
+    }
+}
+
+// Function to update current language display
+function updateCurrentLanguageDisplay() {
+    const currentLangElement = document.getElementById('current-lang');
+    const langMap = { en: 'EN', pt: 'PT', es: 'ES' };
+    if (currentLangElement) {
+        currentLangElement.textContent = langMap[currentLanguage];
+    }
+}
+
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+    
+    // Initialize language
+    updatePageContent();
+    updateCurrentLanguageDisplay();
     
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('a[href^="#"]');
@@ -139,20 +303,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Typing effect for hero title (optional enhancement)
     const heroTitle = document.querySelector('.hero-section h1');
     if (heroTitle) {
-        const text = heroTitle.innerHTML;
-        heroTitle.innerHTML = '';
-        let i = 0;
-        
-        function typeWriter() {
-            if (i < text.length) {
-                heroTitle.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 50);
-            }
-        }
-        
-        // Start typing effect after a delay
-        setTimeout(typeWriter, 1000);
+        // Skip typing effect to avoid conflicts with language switching
+        // The content will be managed by the language system
     }
     
     // Form validation and submission (if contact form is added later)
@@ -167,7 +319,12 @@ document.addEventListener('DOMContentLoaded', function() {
             // Show success message
             const successMessage = document.createElement('div');
             successMessage.className = 'alert alert-success mt-3';
-            successMessage.textContent = 'Mensagem enviada com sucesso! Entraremos em contacto em breve.';
+            const successMessages = {
+                en: 'Message sent successfully! We will contact you soon.',
+                pt: 'Mensagem enviada com sucesso! Entraremos em contacto em breve.',
+                es: '¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.'
+            };
+            successMessage.textContent = successMessages[currentLanguage];
             
             this.appendChild(successMessage);
             this.reset();

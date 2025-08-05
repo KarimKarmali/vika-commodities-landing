@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIKA Commodities - Soluções em Commodities</title>
-    <meta name="description" content="VIKA Commodities - Líder em soluções comerciais para mercados de commodities">
+    <title>VIKA Commodities - Sustainable Solutions</title>
+    <meta name="description" content="VIKA Commodities - Leading sustainable commodities solutions for biofuels">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -26,20 +26,30 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#home">Início</a>
+                        <a class="nav-link" href="#home" data-lang-key="nav_home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#services">Serviços</a>
+                        <a class="nav-link" href="#services" data-lang-key="nav_services">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">Sobre</a>
+                        <a class="nav-link" href="#about" data-lang-key="nav_about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contacto</a>
+                        <a class="nav-link" href="#contact" data-lang-key="nav_contact">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-globe"></i> <span id="current-lang">EN</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="changeLanguage('en')"><i class="fas fa-flag-usa"></i> English</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="changeLanguage('pt')"><i class="fas fa-flag"></i> Português</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="changeLanguage('es')"><i class="fas fa-flag"></i> Español</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link btn btn-primary ms-2 px-3" href="http://odoo-17-vika.vika.com.pt" target="_blank">
-                            <i class="fas fa-sign-in-alt"></i> Sistema Odoo
+                            <i class="fas fa-sign-in-alt"></i> <span data-lang-key="nav_system">Odoo System</span>
                         </a>
                     </li>
                 </ul>
@@ -53,18 +63,18 @@
             <div class="row align-items-center min-vh-100">
                 <div class="col-lg-6">
                     <h1 class="display-4 fw-bold text-white mb-4">
-                        Soluções Sustentáveis em <span class="text-primary">Biocombustíveis</span>
+                        <span data-lang-key="hero_title">Sustainable Solutions in </span><span class="text-primary" data-lang-key="hero_biofuels">Biofuels</span>
                     </h1>
-                    <p class="lead text-light mb-4">
-                        A VIKA Commodities é especialista em commodities sustentáveis para biocombustíveis, 
-                        com certificação <strong>REDcert</strong> e expertise em matérias-primas circulares.
+                    <p class="lead text-light mb-4" data-lang-key="hero_description">
+                        VIKA Commodities specializes in sustainable commodities for biofuels, 
+                        with <strong>REDcert</strong> certification and expertise in circular raw materials.
                     </p>
                     <div class="d-flex gap-3">
                         <a href="#services" class="btn btn-primary btn-lg">
-                            <i class="fas fa-leaf"></i> Nossos Produtos
+                            <i class="fas fa-leaf"></i> <span data-lang-key="hero_products">Our Products</span>
                         </a>
                         <a href="#contact" class="btn btn-outline-light btn-lg">
-                            <i class="fas fa-certificate"></i> Certificação REDcert
+                            <i class="fas fa-certificate"></i> <span data-lang-key="hero_certification">REDcert Certification</span>
                         </a>
                     </div>
                 </div>
@@ -80,8 +90,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center mb-5">
-                    <h2 class="display-5 fw-bold">Nossos Produtos Sustentáveis</h2>
-                    <p class="lead">Matérias-primas certificadas <strong>REDcert</strong> para biocombustíveis avançados</p>
+                    <h2 class="display-5 fw-bold" data-lang-key="services_title">Our Sustainable Products</h2>
+                    <p class="lead" data-lang-key="services_subtitle"><strong>REDcert</strong> certified raw materials for advanced biofuels</p>
                 </div>
             </div>
             <div class="row g-4">
@@ -89,8 +99,8 @@
                     <div class="card h-100 shadow-sm">
                         <div class="card-body text-center">
                             <i class="fas fa-utensils text-primary mb-3" style="font-size: 3rem;"></i>
-                            <h5 class="card-title">Used Cooking Oils (UCO)</h5>
-                            <p class="card-text">Óleos alimentares usados certificados REDcert para produção de biodiesel avançado e combustível de aviação sustentável.</p>
+                            <h5 class="card-title" data-lang-key="product_uco_title">Used Cooking Oils (UCO)</h5>
+                            <p class="card-text" data-lang-key="product_uco_desc">REDcert certified used cooking oils for advanced biodiesel production and sustainable aviation fuel.</p>
                         </div>
                     </div>
                 </div>
@@ -98,8 +108,8 @@
                     <div class="card h-100 shadow-sm">
                         <div class="card-body text-center">
                             <i class="fas fa-tint text-primary mb-3" style="font-size: 3rem;"></i>
-                            <h5 class="card-title">Acid Oleins</h5>
-                            <p class="card-text">Oleínas ácidas de alta qualidade provenientes do refino de óleos vegetais, ideais para biocombustíveis sustentáveis.</p>
+                            <h5 class="card-title" data-lang-key="product_oleins_title">Acid Oleins</h5>
+                            <p class="card-text" data-lang-key="product_oleins_desc">High-quality acid oleins from vegetable oil refining, ideal for sustainable biofuels.</p>
                         </div>
                     </div>
                 </div>
@@ -107,8 +117,8 @@
                     <div class="card h-100 shadow-sm">
                         <div class="card-body text-center">
                             <i class="fas fa-seedling text-primary mb-3" style="font-size: 3rem;"></i>
-                            <h5 class="card-title">POME & Resíduos</h5>
-                            <p class="card-text">Palm Oil Mill Effluent, resíduos alimentares e outros waste & residues certificados para economia circular.</p>
+                            <h5 class="card-title" data-lang-key="product_pome_title">POME & Residues</h5>
+                            <p class="card-text" data-lang-key="product_pome_desc">Palm Oil Mill Effluent, food waste and other certified waste & residues for circular economy.</p>
                         </div>
                     </div>
                 </div>
@@ -121,19 +131,19 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h2 class="display-5 fw-bold mb-4">Pioneiros em Sustentabilidade</h2>
-                    <p class="lead mb-4">
-                        A VIKA Commodities é especialista em matérias-primas sustentáveis para biocombustíveis, 
-                        promovendo a economia circular e a descarbonização do transporte.
+                    <h2 class="display-5 fw-bold mb-4" data-lang-key="about_title">Pioneers in Sustainability</h2>
+                    <p class="lead mb-4" data-lang-key="about_description">
+                        VIKA Commodities specializes in sustainable raw materials for biofuels, 
+                        promoting circular economy and transport decarbonization.
                     </p>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-certificate text-primary me-2"></i> Certificação REDcert Europa</li>
-                        <li class="mb-2"><i class="fas fa-recycle text-primary me-2"></i> Economia Circular</li>
-                        <li class="mb-2"><i class="fas fa-leaf text-primary me-2"></i> Net Zero Commitment</li>
-                        <li class="mb-2"><i class="fas fa-globe text-primary me-2"></i> Cadeia de Fornecimento Global</li>
+                        <li class="mb-2"><i class="fas fa-certificate text-primary me-2"></i> <span data-lang-key="about_cert">REDcert Europe Certification</span></li>
+                        <li class="mb-2"><i class="fas fa-recycle text-primary me-2"></i> <span data-lang-key="about_circular">Circular Economy</span></li>
+                        <li class="mb-2"><i class="fas fa-leaf text-primary me-2"></i> <span data-lang-key="about_netzero">Net Zero Commitment</span></li>
+                        <li class="mb-2"><i class="fas fa-globe text-primary me-2"></i> <span data-lang-key="about_supply">Global Supply Chain</span></li>
                     </ul>
                     <a href="http://odoo-17-vika.vika.com.pt" target="_blank" class="btn btn-primary">
-                        <i class="fas fa-external-link-alt"></i> Aceder ao Sistema
+                        <i class="fas fa-external-link-alt"></i> <span data-lang-key="about_access">Access System</span>
                     </a>
                 </div>
                 <div class="col-lg-6">
@@ -148,31 +158,31 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="display-5 fw-bold mb-5">Contacte-nos</h2>
+                    <h2 class="display-5 fw-bold mb-5" data-lang-key="contact_title">Contact Us</h2>
                 </div>
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 text-center">
                     <i class="fas fa-envelope text-primary mb-3" style="font-size: 3rem;"></i>
-                    <h5>Email</h5>
+                    <h5 data-lang-key="contact_email">Email</h5>
                     <p>admin@vika.com.pt</p>
                 </div>
                 <div class="col-lg-4 text-center">
                     <i class="fas fa-phone text-primary mb-3" style="font-size: 3rem;"></i>
-                    <h5>Telefone</h5>
+                    <h5 data-lang-key="contact_phone">Phone</h5>
                     <p>+351 XXX XXX XXX</p>
                 </div>
                 <div class="col-lg-4 text-center">
                     <i class="fas fa-map-marker-alt text-primary mb-3" style="font-size: 3rem;"></i>
-                    <h5>Localização</h5>
+                    <h5 data-lang-key="contact_location">Location</h5>
                     <p>Portugal</p>
                 </div>
             </div>
             <div class="row mt-5">
                 <div class="col-lg-6 mx-auto text-center">
-                    <p class="lead">Pronto para revolucionar seus negócios em commodities?</p>
+                    <p class="lead" data-lang-key="contact_cta">Ready to revolutionize your commodities business?</p>
                     <a href="http://odoo-17-vika.vika.com.pt" target="_blank" class="btn btn-primary btn-lg">
-                        <i class="fas fa-rocket"></i> Começar Agora
+                        <i class="fas fa-rocket"></i> <span data-lang-key="contact_start">Get Started</span>
                     </a>
                 </div>
             </div>
@@ -184,11 +194,11 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <p class="mb-0">&copy; 2024 VIKA Commodities. Todos os direitos reservados.</p>
+                    <p class="mb-0" data-lang-key="footer_copyright">&copy; 2024 VIKA Commodities. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <a href="http://odoo-17-vika.vika.com.pt" target="_blank" class="text-white text-decoration-none">
-                        <i class="fas fa-external-link-alt"></i> Sistema Odoo
+                        <i class="fas fa-external-link-alt"></i> <span data-lang-key="footer_system">Odoo System</span>
                     </a>
                 </div>
             </div>
