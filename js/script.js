@@ -35,7 +35,17 @@ const translations = {
         contact_cta: 'Ready to revolutionize your commodities business?',
         contact_start: 'Get Started',
         footer_copyright: '© 2024 VIKA Commodities. All rights reserved.',
-        footer_system: 'Odoo System'
+        footer_system: 'Odoo System',
+        green_energy: 'Green Energy',
+        renewable_solutions: 'Renewable Solutions',
+        clean_resources: 'Clean Resources',
+        water_environment: 'Water & Environment',
+        biofuels: 'Biofuels',
+        sustainable_growth: 'Sustainable Growth',
+        clean_air: 'Clean Air',
+        carbon_reduction: 'Carbon Reduction',
+        circular_economy: 'Circular Economy',
+        redcert_certified: 'REDcert Certified'
     },
     pt: {
         nav_home: 'Início',
@@ -70,7 +80,17 @@ const translations = {
         contact_cta: 'Pronto para revolucionar seus negócios em commodities?',
         contact_start: 'Começar Agora',
         footer_copyright: '© 2024 VIKA Commodities. Todos os direitos reservados.',
-        footer_system: 'Sistema Odoo'
+        footer_system: 'Sistema Odoo',
+        green_energy: 'Energia Verde',
+        renewable_solutions: 'Soluções Renováveis',
+        clean_resources: 'Recursos Limpos',
+        water_environment: 'Água & Ambiente',
+        biofuels: 'Biocombustíveis',
+        sustainable_growth: 'Crescimento Sustentável',
+        clean_air: 'Ar Limpo',
+        carbon_reduction: 'Redução de Carbono',
+        circular_economy: 'Economia Circular',
+        redcert_certified: 'Certificado REDcert'
     },
     es: {
         nav_home: 'Inicio',
@@ -105,7 +125,17 @@ const translations = {
         contact_cta: '¿Listo para revolucionar tu negocio de commodities?',
         contact_start: 'Empezar Ahora',
         footer_copyright: '© 2024 VIKA Commodities. Todos los derechos reservados.',
-        footer_system: 'Sistema Odoo'
+        footer_system: 'Sistema Odoo',
+        green_energy: 'Energía Verde',
+        renewable_solutions: 'Soluciones Renovables',
+        clean_resources: 'Recursos Limpios',
+        water_environment: 'Agua y Ambiente',
+        biofuels: 'Biocombustibles',
+        sustainable_growth: 'Crecimiento Sostenible',
+        clean_air: 'Aire Limpio',
+        carbon_reduction: 'Reducción de Carbono',
+        circular_economy: 'Economía Circular',
+        redcert_certified: 'Certificado REDcert'
     }
 };
 
@@ -160,12 +190,82 @@ function updateCurrentLanguageDisplay() {
     }
 }
 
+// Dynamic Background Effects
+function initDynamicBackground() {
+    const heroSection = document.querySelector('.hero-section');
+    
+    // Parallax effect on scroll
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const parallax = scrolled * 0.5;
+        
+        // Apply parallax to hero background
+        if (heroSection) {
+            const heroBackground = heroSection.querySelector('::before');
+            heroSection.style.transform = `translateY(${parallax}px)`;
+        }
+        
+        // Fade background elements based on scroll
+        const elements = document.querySelectorAll('.floating-element');
+        elements.forEach((element, index) => {
+            const elementTop = element.offsetTop;
+            const elementHeight = element.offsetHeight;
+            const windowHeight = window.innerHeight;
+            
+            if (scrolled + windowHeight > elementTop && scrolled < elementTop + elementHeight) {
+                const opacity = 1 - (scrolled - elementTop + windowHeight) / (windowHeight + elementHeight);
+                element.style.opacity = Math.max(0.3, Math.min(1, opacity));
+            }
+        });
+        
+        // Dynamic background color shift
+        const scrollPercent = Math.min(scrolled / (document.body.scrollHeight - window.innerHeight), 1);
+        if (heroSection) {
+            const overlay = heroSection.querySelector('::after');
+            const newOpacity = 0.1 + (scrollPercent * 0.3);
+            heroSection.style.setProperty('--scroll-opacity', newOpacity);
+        }
+    });
+    
+    // Reveal animations on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+            }
+        });
+    }, observerOptions);
+    
+    // Add scroll reveal to sections
+    const sections = document.querySelectorAll('section:not(.hero-section)');
+    sections.forEach(section => {
+        section.classList.add('scroll-reveal');
+        revealObserver.observe(section);
+    });
+    
+    // Background image loading with fade-in
+    const bgImage = new Image();
+    bgImage.onload = function() {
+        heroSection.style.opacity = '1';
+        heroSection.style.transition = 'opacity 1s ease-in-out';
+    };
+    bgImage.src = 'images/20250805_1802_Futuristic Aviation Hub_simple_compose_01k1xjv615f7ptbcpezp32d0fj.png';
+}
+
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize language
     updatePageContent();
     updateCurrentLanguageDisplay();
+    
+    // Initialize dynamic background effects
+    initDynamicBackground();
     
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('a[href^="#"]');
