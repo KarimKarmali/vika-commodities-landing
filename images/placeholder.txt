@@ -1,0 +1,17 @@
+# Placeholder for images
+
+This folder will contain:
+- vika-logo.png (extracted from Odoo)
+- commodities-hero.jpg (stock photo)
+- about-vika.jpg (stock photo)
+
+To extract the VIKA logo from Odoo:
+1. Access http://odoo-17-vika.vika.com.pt/logo.png
+2. Save as vika-logo.png in this folder
+
+For demo purposes, you can use placeholder images or stock photos from:
+- Unsplash.com
+- Pexels.com
+- Pixabay.com
+
+Search for: "commodities trading", "business meeting", "financial charts"
