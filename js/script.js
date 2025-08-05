@@ -211,21 +211,43 @@ function updatePageContent() {
     
     // Update page title and meta description
     const titleMap = {
-        en: 'VIKA Commodities - Sustainable Solutions',
-        pt: 'VIKA Commodities - Soluções Sustentáveis',
-        es: 'VIKA Commodities - Soluciones Sostenibles'
+        en: 'VIKA Commodities - Sustainable Feedstock Trading | HVO SAF Solutions',
+        pt: 'VIKA Commodities - Trading Sustentável Matérias-Primas | Soluções HVO SAF',
+        es: 'VIKA Commodities - Trading Sostenible Materias Primas | Soluciones HVO SAF'
     };
     
     const descriptionMap = {
-        en: 'VIKA Commodities - Leading sustainable commodities solutions for biofuels',
-        pt: 'VIKA Commodities - Líder em soluções comerciais para mercados de commodities',
-        es: 'VIKA Commodities - Líder en soluciones comerciales para mercados de commodities'
+        en: 'Global leader in sustainable commodities trading for biofuels. REDcert certified HVO and SAF feedstock supplier. Circular economy solutions for renewable energy.',
+        pt: 'Líder global em trading de commodities sustentáveis para biocombustíveis. Fornecedor certificado REDcert de matérias-primas HVO e SAF. Soluções de economia circular.',
+        es: 'Líder global en trading de commodities sostenibles para biocombustibles. Proveedor certificado REDcert de materias primas HVO y SAF. Soluciones economía circular.'
+    };
+    
+    const keywordsMap = {
+        en: 'VIKA Commodities, sustainable commodities, biofuels, renewable fuels, HVO, hydrotreated vegetable oil, SAF, sustainable aviation fuel, UCO, used cooking oil, REDcert certification, circular economy, feedstock trading, Europe, Middle East, North Africa, South East Asia',
+        pt: 'VIKA Commodities, commodities sustentáveis, biocombustíveis, combustíveis renováveis, HVO, óleo vegetal hidrotratado, SAF, combustível aviação sustentável, UCO, óleo alimentar usado, certificação REDcert, economia circular, trading matérias-primas, Europa, Médio Oriente, Norte África, Sudeste Asiático',
+        es: 'VIKA Commodities, commodities sostenibles, biocombustibles, combustibles renovables, HVO, aceite vegetal hidrotratado, SAF, combustible aviación sostenible, UCO, aceite cocina usado, certificación REDcert, economía circular, trading materias primas, Europa, Medio Oriente, Norte África, Sudeste Asiático'
     };
     
     document.title = titleMap[currentLanguage];
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
         metaDescription.content = descriptionMap[currentLanguage];
+    }
+    
+    // Update keywords meta tag
+    const metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (metaKeywords) {
+        metaKeywords.content = keywordsMap[currentLanguage];
+    }
+    
+    // Update Open Graph tags
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogTitle) {
+        ogTitle.content = titleMap[currentLanguage];
+    }
+    if (ogDescription) {
+        ogDescription.content = descriptionMap[currentLanguage];
     }
 }
 
