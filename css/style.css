@@ -723,6 +723,23 @@ html {
 /* Contact Section */
 #contact {
     background: linear-gradient(135deg, var(--dark-color) 0%, #1a1a1a 100%);
+    color: white;
+}
+
+#contact h2 {
+    color: white;
+}
+
+#contact h5 {
+    color: white;
+}
+
+#contact p {
+    color: white;
+}
+
+#contact .text-muted {
+    color: #cccccc !important;
 }
 
 #contact i {
